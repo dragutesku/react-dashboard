@@ -1,4 +1,6 @@
 import { Outlet } from 'react-router-dom';
+import './App.css'
+import logo from './logo.svg'
 
 // Components
 import Header from './Components/Header';
@@ -10,10 +12,10 @@ function Layout(props: any) {
 
 
   return (
-    <>
+    <div className="wrapper">
       {/* Header */}
       <Header />
-      
+
       {/* Content */}
       <main className="main">
         <Outlet />
@@ -21,7 +23,7 @@ function Layout(props: any) {
 
       {/* Footer */}
       <Footer />
-    </>
+    </div>
   )
 }
 
