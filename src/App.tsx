@@ -1,5 +1,5 @@
 import type { RouteObject } from 'react-router-dom';
-import { useRoutes } from 'react-router-dom';
+import { useRoutes, useParams } from 'react-router-dom';
 import './App.css'
 
 //// Layout
@@ -25,18 +25,12 @@ function App() {
       element: <Layout />,
       children: [
         { index: true, element: <Homepage /> },
-        { 
-          path: '/users', element: <Users />,
-          children: [
-            // { path: '/newuser', element: <NewUser /> } TODO: FUCKY
-          ]
-        },
-        {
-          path: '/posts', element: <Posts />,
-          children: [
-            
-          ]
-        }
+        { path: '/users', element: <Users />},
+        { path: '/newuser', element: <NewUser /> },
+        { path: '/edituser/:id', element: <EditUser /> },
+        { path: '/posts', element: <Posts /> },
+        { path: '/newpost', element: <NewPost /> },
+        { path: '/editpost/:id', element: <EditPost /> }
       ]
     },
     { path: '/login', element: <Login /> }
